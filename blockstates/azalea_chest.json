@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "type=single,facing=north": { "model": "quark:entity/chest/azalea", "y": 90 },
+        "type=single,facing=east": { "model": "quark:entity/chest/azalea", "y": 180 },
+        "type=single,facing=south": { "model": "quark:entity/chest/azalea", "y": 270 },
+        "type=single,facing=west": { "model": "quark:entity/chest/azalea"},
+        "type=right,facing=north": { "model": "quark:entity/chest/azalea_double_right", "y": 90 },
+        "type=right,facing=east": { "model": "quark:entity/chest/azalea_double_right", "y": 180 },
+        "type=right,facing=south": { "model": "quark:entity/chest/azalea_double_right", "y": 270 },
+        "type=right,facing=west": { "model": "quark:entity/chest/azalea_double_right"},
+		"type=left,facing=north": { "model": "quark:entity/chest/azalea_double_left", "y": 90 },
+        "type=left,facing=east": { "model": "quark:entity/chest/azalea_double_left","y": 180 },
+        "type=left,facing=south": { "model": "quark:entity/chest/azalea_double_left", "y": 270 },
+        "type=left,facing=west": { "model": "quark:entity/chest/azalea_double_left"}
+    }
+}
