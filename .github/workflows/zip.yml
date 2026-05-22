@@ -39,9 +39,9 @@ jobs:
         run: |
           mkdir ./assets
           mkdir ./assets/quark
-          mkdir ./textures
+          mkdir ./quark_variant_chests
           mv ./models ./assets/quark/models
-          mv ./quark/src/main/resources/assets/quark/textures/quark_variant_chests ./textures
+          mv ./quark/src/main/resources/assets/quark/textures/quark_variant_chests ./quark_variant_chests
           mv ./blockstates ./assets/quark/blockstates
           zip -r bluemap-quark.zip ./assets
       
