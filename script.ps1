@@ -1,7 +1,7 @@
 #Generates a list of all wood types from the quark textures, then generates blockstates and models for those using the templates
 
 New-Item -ItemType "Directory" -Path "./blockstates"
-$wood_types = Get-ChildItem ./quark_variant_chests -name
+$wood_types = Get-ChildItem ./quark_variant_chests/ -Name
 foreach ($wood_name in $wood_types) {
 	(Get-Content -path ./templates/blockstate_template.json) -replace "template", "${wood_name}/${wood_name}" | Set-Content "blockstates/${wood_name}_chest.json"
 	(Get-Content -path ./templates/blockstate_template.json) -replace "template", "${wood_name}/${wood_name}_trapped" | Set-Content "blockstates/${wood_name}_trapped_chest.json"
