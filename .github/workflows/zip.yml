@@ -8,12 +8,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: self-hosted
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
@@ -33,7 +29,21 @@ jobs:
           
       - run: git sparse-checkout list
         working-directory: quark
-          
+      - run: |
+          mv ./quark/src/main/resources/assets/quark/textures/quark_variant_chests/ ./
+          rm -r ./models/*
+          rm -r ./blockstates/*
+          powershell -file ./script.ps1
+  
+  release:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: checkout
+        uses: actions/checkout@v6     
       # Runs a single command using the runners shell
       - name: move
         run: |
@@ -41,7 +51,6 @@ jobs:
           mkdir ./assets/quark
           mkdir ./quark_variant_chests
           mv ./models ./assets/quark/models
-          mv ./quark/src/main/resources/assets/quark/textures/quark_variant_chests/ ./
           mv ./blockstates ./assets/quark/blockstates
           zip -r bluemap-quark.zip ./assets
       
