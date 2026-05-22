@@ -22,10 +22,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: move
         run: |
+          mkdir ./assets
           mkdir ./assets/quark
           mv ./textures ./assets/quark/textures
           mv ./models ./assets/quark/models
           mv ./blockstates ./assets/quark/blockstates
+          zip ./assets bluemap-quark.zip
           
 
       # Runs a set of commands using the runners shell
