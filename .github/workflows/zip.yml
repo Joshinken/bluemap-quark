@@ -27,7 +27,7 @@ jobs:
           mv ./textures ./assets/quark/textures
           mv ./models ./assets/quark/models
           mv ./blockstates ./assets/quark/blockstates
-          zip ./assets bluemap-quark.zip
+          zip -r bluemap-quark.zip ./assets
           
 
       # Runs a set of commands using the runners shell
