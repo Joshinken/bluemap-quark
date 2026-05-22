@@ -18,7 +18,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v6
-      
+    
       - name: move
         run: mkdir ./quark
       
@@ -27,9 +27,12 @@ jobs:
         with:
           repository: "VazkiiMods/Quark"
           sparse-checkout: |
-            src/main/resources/assets/quark/textures/quark_variant_chests/
+            src/main/resources/assets/quark/textures/quark_variant_chests
           sparse-checkout-cone-mode: true
           path: "quark"
+          
+      - run: git sparse-checkout list
+        working-directory: quark
           
       # Runs a single command using the runners shell
       - name: move
