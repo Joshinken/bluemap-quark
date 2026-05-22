@@ -33,11 +33,12 @@ jobs:
           mv ./quark/src/main/resources/assets/quark/textures/quark_variant_chests/ ./
           rm -r ./models/*
           rm -r ./blockstates/*
-          powershell -file ./script.ps1
+          pwsh -file ./script.ps1
   
   release:
     # The type of runner that the job will run on
     runs-on: self-hosted
+    needs: build
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
