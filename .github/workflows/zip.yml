@@ -28,10 +28,10 @@ jobs:
           mv ./models ./assets/quark/models
           mv ./blockstates ./assets/quark/blockstates
           zip -r bluemap-quark.zip ./assets
+      
+      - name: Release
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
+        with:
+          files: bluemap-quark.zip
           
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
