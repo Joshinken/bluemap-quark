@@ -27,7 +27,7 @@ jobs:
         with:
           repository: "VazkiiMods/Quark"
           path: "quark"
-          sparse-checkout: 'src/main/resources/assets/quark/textures/quark_variant_chests'
+          sparse-checkout: src/main/resources/assets/quark/textures/quark_variant_chests
           
       # Runs a single command using the runners shell
       - name: move
